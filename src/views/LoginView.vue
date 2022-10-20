@@ -1,5 +1,5 @@
 <template>
-<NavBar />
+<Navbar />
 
 <div class="auth-content">
     <form>
@@ -40,7 +40,8 @@ export default {
     transform: translate(-50%, -50%);
     padding: 20px;
     background: white;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .auth-content .form-title {

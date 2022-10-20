@@ -17,6 +17,9 @@
                 <router-link class="link" to="#">shop</router-link>
             </li>
             <li>
+                <router-link class="link" to="/login">Login</router-link>
+            </li>
+            <li>
                 <router-link class="link" to="#">Contact</router-link>
             </li>
         </ul>
@@ -35,6 +38,9 @@
                 </li>
                 <li>
                     <router-link class="link" to="#">shop</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/login">Login</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="#">Contact</router-link>
