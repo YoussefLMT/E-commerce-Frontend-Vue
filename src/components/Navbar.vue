@@ -44,3 +44,35 @@
     </nav>
 </header>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            mobile: null,
+            mobileNav: null,
+            windowWidth: null,
+        }
+    },
+    created() {
+        window.addEventListener('resize', this.checkScreenWidth)
+        this.checkScreenWidth()
+    },
+    methods: {
+        toggleNavBar() {
+            this.mobileNav = !this.mobileNav
+        },
+        checkScreenWidth() {
+            this.windowWidth = window.innerWidth
+            if (this.windowWidth <= 750) {
+                this.mobile = true
+                return
+            }
+            this.mobile = false
+            this.mobileNavfalse = false
+            return
+        },
+    }
+}
+</script>
+
