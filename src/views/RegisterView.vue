@@ -4,17 +4,23 @@
 <div class="auth-content">
     <form>
         <h2 class="form-title">Register</h2>
+        <div class="alert alert-success" v-if="message">
+            {{ message }}
+        </div>
         <div>
             <label>Name</label>
             <input type="text" v-model="userData.name" class="text-input">
+            <span class="text-danger" v-if="errors.name">{{ errors.name[0] }}</span>
         </div>
         <div>
             <label>Email</label>
             <input type="email" v-model="userData.email" class="text-input">
+            <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
         </div>
         <div>
             <label>Password</label>
             <input type="password" v-model="userData.password" class="text-input">
+            <span class="text-danger" v-if="errors.password">{{ errors.password[0] }}</span>
         </div>
         <div>
             <button type="button" @click="register" class="btn btn-big">Register</button>
@@ -44,17 +50,17 @@ export default {
             errors: ''
         }
     },
-     methods: {
+    methods: {
         async register() {
             try {
                 const response = await axiosInstance.post("/register", this.userData)
                 if (response.data.status === 200) {
-                    console.log(response.data.message) 
+                    this.message = response.data.message
                     this.userData.name = ''
                     this.userData.email = ''
                     this.userData.password = ''
                 } else {
-                    console.log(response.data.validation_err) 
+                    this.errors = response.data.validation_err
                 }
             } catch (error) {
                 console.log(error)
