@@ -149,5 +149,17 @@ export default {
     .btn {
         margin-top: 10px;
     }
+
+    .features {
+        padding: 100px 20px;
+    }
+
+    .title-txt {
+        font-size: 30px;
+    }
+
+    .title p {
+        text-align: center;
+    }
 }
 </style>

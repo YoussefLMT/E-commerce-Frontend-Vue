@@ -35,15 +35,12 @@ export default {
 }
 
 .box .imgbox img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
 }
 
 .box .text {
-    padding: 15px 0 5px;
+    padding: 15px 0 0px;
     text-align: center;
 }
 
@@ -52,10 +49,22 @@ export default {
 }
 
 @media (max-width: 600px) {
+
     .box .imgbox {
-        position: relative;
         width: 100%;
         height: 170px;
+    }
+
+    .box .text {
+        text-align: center;
+    }
+
+    .box .text h3 {
+        font-size: 18px;
+    }
+
+    .box .text p {
+        font-size: 16px;
     }
 }
 </style>
