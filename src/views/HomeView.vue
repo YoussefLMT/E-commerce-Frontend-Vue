@@ -65,6 +65,11 @@ export default {
 
 .home-content .btn {
     margin-top: 10px;
+    font-weight: 500;
+}
+
+.home-content .btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media only screen and (max-width: 800px) {
