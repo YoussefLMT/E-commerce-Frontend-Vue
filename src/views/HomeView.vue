@@ -184,6 +184,7 @@ export default {
 
     .title p {
         text-align: center;
+        padding: 0 20px;
     }
 }
 </style>
