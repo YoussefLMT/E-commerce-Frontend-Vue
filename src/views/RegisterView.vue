@@ -31,7 +31,18 @@ import Navbar from '@/components/Navbar'
 export default {
     components: {
         Navbar
-    }
+    },
+    data() {
+        return {
+            userData: {
+                name: '',
+                email: '',
+                password: ''
+            },
+            message: '',
+            errors: ''
+        }
+    },
 }
 </script>
 

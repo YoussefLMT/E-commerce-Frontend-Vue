@@ -3,7 +3,7 @@
     <nav>
         <div class="logo">
             <router-link to="/">
-                <h2><span class="txt">A</span>B</h2>
+                <h2><span class="txt">H</span>S</h2>
             </router-link>
         </div>
         <ul v-show="!mobile" class="navigation">
@@ -18,6 +18,9 @@
             </li>
             <li>
                 <router-link class="link" to="/login">Login</router-link>
+            </li>
+            <li>
+                <router-link class="link" to="/register">Register</router-link>
             </li>
             <li>
                 <router-link class="link" to="#">Contact</router-link>
@@ -41,6 +44,9 @@
                 </li>
                 <li>
                     <router-link class="link" to="/login">Login</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/register">Register</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="#">Contact</router-link>
