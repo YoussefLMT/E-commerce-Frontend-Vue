@@ -1,7 +1,7 @@
 <template>
 <Navbar />
 
-<div class="home">
+<section class="home">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -19,7 +19,17 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="features">
+    <div class="title">
+        <h2 class="title-txt">Our <span>Features</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="content">
+        
+    </div>
+</section>
 </template>
 
 <script>
