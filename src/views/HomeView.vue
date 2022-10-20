@@ -30,3 +30,28 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.image {
+    width: 550px;
+    margin-top: 120px;
+    margin-left: 200px;
+}
+
+.image img {
+    width: 100%;
+}
+
+.home-content {
+    margin-top: 250px;
+    margin-left: 60px;
+}
+
+.home-content p {
+    font-weight: 500;
+}
+
+.home-content .txt {
+    color: #4F46E5;
+}
+</style>
