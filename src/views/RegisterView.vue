@@ -78,9 +78,7 @@ export default {
                         title: response.data.message
                     })
 
-                    this.userData.name = ''
-                    this.userData.email = ''
-                    this.userData.password = ''
+                    this.$router.push('/login')
                 } else {
                     this.errors = response.data.validation_err
                 }
