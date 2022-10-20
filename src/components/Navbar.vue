@@ -2,22 +2,22 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="/">
+            <router-link to="/">
                 <h2><span class="txt">A</span>B</h2>
-            </a>
+            </router-link>
         </div>
         <ul v-show="!mobile" class="navigation">
             <li>
-                <a class="link" href="/">Home</a>
+                <router-link class="link" to="/">Home</router-link>
             </li>
             <li>
-                <a class="link" href="#">About</a>
+                <router-link class="link" to="#">About</router-link>
             </li>
             <li>
-                <a class="link" href="#">shop</a>
+                <router-link class="link" to="#">shop</router-link>
             </li>
             <li>
-                <a class="link" href="#">Contact</a>
+                <router-link class="link" to="#">Contact</router-link>
             </li>
         </ul>
 
@@ -28,16 +28,16 @@
         <transition name="mobile-nav">
             <ul v-show="mobileNav" class="dropdown-nav">
                 <li>
-                    <a class="link" href="/">Home</a>
+                    <router-link class="link" to="/">Home</router-link>
                 </li>
                 <li>
-                    <a class="link" href="#">About</a>
+                    <router-link class="link" to="#">About</router-link>
                 </li>
                 <li>
-                    <a class="link" href="#">shop</a>
+                    <router-link class="link" to="#">shop</router-link>
                 </li>
                 <li>
-                    <a class="link" href="#">Contact</a>
+                    <router-link class="link" to="#">Contact</router-link>
                 </li>
             </ul>
         </transition>
