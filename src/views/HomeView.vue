@@ -102,7 +102,7 @@ export default {
 }
 
 .features {
-    padding: 100px;
+    padding: 200px 100px;
 }
 
 .features .content {
