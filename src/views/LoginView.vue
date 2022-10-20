@@ -7,10 +7,12 @@
         <div>
             <label>Email</label>
             <input type="email" v-model="userData.email" class="text-input">
+            <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
         </div>
         <div>
             <label>Password</label>
             <input type="password" v-model="userData.password" class="text-input">
+            <span class="text-danger" v-if="errors.password">{{ errors.password[0] }}</span>
         </div>
         <div>
             <button type="button" @click="login" class="btn btn-big">Login</button>
@@ -24,6 +26,7 @@
 <script>
 import Navbar from '@/components/Navbar'
 import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -43,7 +46,21 @@ export default {
             try {
                 const response = await axiosInstance.post("/login", this.userData)
                 if (response.data.status === 401) {
-                    this.message = response.data.message
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
                 } else if (response.data.role === 'user') {
                     this.$router.push('/')
                     console.log('user')
