@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="home-content">
+                    <h2><span class="text">Happy</span> Shop</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas eum quidem natus, veritatis asperiores facere, voluptate consectetur adipisci ea voluptatem tempore deserunt provident fugit eveniet eos enim? Dolorem, atque.</p>
                     <button type="button" class="btn btn-primary">Shop Now</button>
                 </div>
@@ -13,7 +14,7 @@
 
             <div class="col-md-4">
                 <div class="image d-none d-sm-block">
-                    <img src="@/assets/logo.png">
+                    <img src="@/assets/undraw_shopping_app_flsj.svg">
                 </div>
             </div>
         </div>
@@ -33,9 +34,9 @@ export default {
 
 <style scoped>
 .image {
-    width: 550px;
-    margin-top: 120px;
-    margin-left: 200px;
+    width: 500px;
+    margin-top: 170px;
+    margin-left: 280px;
 }
 
 .image img {
@@ -43,12 +44,27 @@ export default {
 }
 
 .home-content {
-    margin-top: 250px;
+    margin-top: 230px;
     margin-left: 60px;
 }
 
+.home-content h2 {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.home-content .text {
+    color: blue;
+}
+
 .home-content p {
+    width: 500px;
     font-weight: 500;
+    margin-top: 30px;
+}
+
+.home-content .btn {
+    margin-top: 10px;
 }
 
 @media only screen and (max-width: 800px) {
