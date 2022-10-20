@@ -39,7 +39,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-       
+
     </div>
 </section>
 </template>
@@ -136,6 +136,14 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-top: 40px;
+}
+
+.categories .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 40px;
 }
 
