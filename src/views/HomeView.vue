@@ -58,9 +58,9 @@ export default {
 }
 
 .home-content p {
-    width: 500px;
     font-weight: 500;
     margin-top: 30px;
+    font-size: 18px;
 }
 
 .home-content .btn {
@@ -75,8 +75,13 @@ export default {
         text-align: center;
     }
 
+    .home-content h2 {
+        font-weight: 600;
+        font-size: 35px;
+    }
+
     .home-content p {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .btn {
