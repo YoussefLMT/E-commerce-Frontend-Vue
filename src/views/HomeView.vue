@@ -27,7 +27,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
-        
+
     </div>
 </section>
 </template>
@@ -80,6 +80,37 @@ export default {
 
 .home-content .btn:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title-txt {
+    color: #111;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.title-txt span {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.features {
+    padding: 100px;
+}
+
+.features .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 40px;
 }
 
 @media only screen and (max-width: 800px) {
