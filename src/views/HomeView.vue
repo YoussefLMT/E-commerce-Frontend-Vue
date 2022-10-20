@@ -39,7 +39,11 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-
+        <Category :image="image1" name="Burger" />
+        <Category :image="image1" name="Pizza" />
+        <Category :image="image1" name="Salad" />
+        <Category :image="image1" name="Sandwich" />
+        <Category :image="image1" name="Spaguetti" />
     </div>
 </section>
 </template>
@@ -50,11 +54,13 @@ import Feature from '@/components/Feature.vue'
 import image1 from '@/assets/brand-identity.png'
 import image2 from '@/assets/delivery.png'
 import image3 from '@/assets/cash-on-delivery.png'
+import Category from '@/components/Category.vue'
 
 export default {
     components: {
         Navbar,
-        Feature
+        Feature,
+        Category
     },
     data() {
         return {
