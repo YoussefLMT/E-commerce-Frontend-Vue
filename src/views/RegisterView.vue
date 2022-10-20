@@ -1,5 +1,5 @@
 <template>
-<NavBar />
+<Navbar />
 
 <div class="auth-content">
     <form>
@@ -24,3 +24,13 @@
     </form>
 </div>
 </template>
+
+<script>
+import Navbar from '@/components/Navbar'
+
+export default {
+    components: {
+        Navbar
+    }
+}
+</script>
