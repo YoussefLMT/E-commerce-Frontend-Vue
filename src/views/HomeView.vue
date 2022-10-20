@@ -51,7 +51,20 @@ export default {
     font-weight: 500;
 }
 
-.home-content .txt {
-    color: #4F46E5;
+@media only screen and (max-width: 800px) {
+
+    .home-content {
+        margin-top: 120px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .home-content p {
+        font-size: 18px;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
 }
 </style>
