@@ -23,6 +23,7 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -37,6 +38,34 @@ export default {
             errors: ''
         }
     },
+    methods: {
+        async login() {
+            try {
+                const response = await axiosInstance.post("/login", this.userData)
+                if (response.data.status === 401) {
+                    this.message = response.data.message
+                } else if (response.data.role === 'user') {
+                    this.$router.push('/')
+                    console.log('user')
+                    store.commit('auth/setUserRole', response.data.role)
+                    store.commit('auth/setUserToken', response.data.token)
+                    localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('role', response.data.role)
+                } else if (response.data.role === 'admin') {
+                    this.$router.push('/dashboard')
+                    console.log('admin')
+                    store.commit('auth/setUserRole', response.data.role)
+                    store.commit('auth/setUserToken', response.data.token)
+                    localStorage.setItem('token', response.data.token)
+                    localStorage.setItem('role', response.data.role)
+                } else {
+                    this.errors = response.data.validation_err
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    }
 }
 </script>
 
