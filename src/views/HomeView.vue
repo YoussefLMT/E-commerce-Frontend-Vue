@@ -39,11 +39,10 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
     <div class="content">
-        <Category :image="image1" name="Burger" />
-        <Category :image="image1" name="Pizza" />
-        <Category :image="image1" name="Salad" />
+        <Category :image="tshirt" name="T-shirts" />
+        <Category :image="jacket" name="Jacket" />
+        <Category :image="pants" name="Pants" />
         <Category :image="image1" name="Sandwich" />
-        <Category :image="image1" name="Spaguetti" />
     </div>
 </section>
 </template>
@@ -55,6 +54,9 @@ import image1 from '@/assets/brand-identity.png'
 import image2 from '@/assets/delivery.png'
 import image3 from '@/assets/cash-on-delivery.png'
 import Category from '@/components/Category.vue'
+import tshirt from '@/assets/t-shirt.png'
+import jacket from '@/assets/jacket.png'
+import pants from '@/assets/pants.png'
 
 export default {
     components: {
@@ -67,6 +69,9 @@ export default {
             image1,
             image2,
             image3,
+            tshirt,
+            jacket,
+            pants
         }
     },
 }
