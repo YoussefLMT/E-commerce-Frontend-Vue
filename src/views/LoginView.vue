@@ -46,6 +46,15 @@ export default {
             errors: ''
         }
     },
+    mounted() {
+        if (localStorage.getItem('token')) {
+            if (localStorage.getItem('role') === 'user') {
+                this.$router.push('/')
+            } else if (localStorage.getItem('role') === 'admin') {
+                this.$router.push('/dashboard')
+            }
+        }
+    },
     methods: {
         async login() {
             try {
