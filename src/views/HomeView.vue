@@ -27,6 +27,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
     <div class="content">
+        <Feature :image="image1" name="Cool Products" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
         <Feature :image="image2" name="Free Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
         <Feature :image="image3" name="Cash On Delivery" description="Lorem ipsum dolor sit amet consectetur adipisicing" />
     </div>
@@ -36,7 +37,7 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Feature from '@/components/Feature.vue'
-import image1 from '@/assets/diet.png'
+import image1 from '@/assets/brand-identity.png'
 import image2 from '@/assets/delivery.png'
 import image3 from '@/assets/cash-on-delivery.png'
 
@@ -45,7 +46,7 @@ export default {
         Navbar,
         Feature
     },
-     data() {
+    data() {
         return {
             image1,
             image2,
