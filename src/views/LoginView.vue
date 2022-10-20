@@ -4,6 +4,9 @@
 <div class="auth-content">
     <form>
         <h2 class="form-title">Login</h2>
+        <div class="alert alert-danger" v-if="message">
+            {{ message }}
+        </div>
         <div>
             <label>Email</label>
             <input type="email" v-model="userData.email" class="text-input">
@@ -26,6 +29,7 @@
 <script>
 import Navbar from '@/components/Navbar'
 import axiosInstance from '@/axios'
+import store from '@/store'
 import Swal from 'sweetalert2'
 
 export default {
@@ -38,6 +42,7 @@ export default {
                 email: '',
                 password: ''
             },
+            message: '',
             errors: ''
         }
     },
@@ -46,31 +51,15 @@ export default {
             try {
                 const response = await axiosInstance.post("/login", this.userData)
                 if (response.data.status === 401) {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
-                    Toast.fire({
-                        icon: 'success',
-                        title: response.data.message
-                    })
+                    this.message = response.data.message
                 } else if (response.data.role === 'user') {
                     this.$router.push('/')
-                    console.log('user')
                     store.commit('auth/setUserRole', response.data.role)
                     store.commit('auth/setUserToken', response.data.token)
                     localStorage.setItem('token', response.data.token)
                     localStorage.setItem('role', response.data.role)
                 } else if (response.data.role === 'admin') {
                     this.$router.push('/dashboard')
-                    console.log('admin')
                     store.commit('auth/setUserRole', response.data.role)
                     store.commit('auth/setUserToken', response.data.token)
                     localStorage.setItem('token', response.data.token)
