@@ -151,8 +151,8 @@ header nav ul .link {
 }
 
 header nav ul .link:hover {
-    color: #4F46E5;
-    border-color: #4F46E5;
+    color: #EAB800;
+    border-color: #EAB800;
 }
 
 .logo h2 {
@@ -167,7 +167,7 @@ header nav ul .link:hover {
 }
 
 .logo .txt {
-    color: #4F46E5;
+    color: #EAB800;
 }
 
 header .logo {

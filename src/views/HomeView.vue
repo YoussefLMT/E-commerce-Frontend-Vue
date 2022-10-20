@@ -64,7 +64,7 @@ export default {
 }
 
 .home-content .text {
-    color: blue;
+    color: #EAB800;
 }
 
 .home-content p {
@@ -76,6 +76,8 @@ export default {
 .home-content .btn {
     margin-top: 10px;
     font-weight: 500;
+    background: #EAB800;
+    border: none;
 }
 
 .home-content .btn:hover {
@@ -89,7 +91,7 @@ export default {
 }
 
 .title-txt span {
-    color: #e74c3c;
+    color: #EAB800;
     font-weight: 700;
 }
 
