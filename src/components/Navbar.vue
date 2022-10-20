@@ -16,6 +16,9 @@
             <li>
                 <router-link class="link" to="#">shop</router-link>
             </li>
+            <li>
+                <router-link class="link" to="#">Contact</router-link>
+            </li>
             <li v-if="this.$store.state.auth.user.role === 'admin'">
                 <router-link class="link" to="/dashboard">Dahboard</router-link>
             </li>
@@ -27,9 +30,11 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-            <li>
-                <router-link class="link" to="#">Contact</router-link>
-            </li>
+            <div v-else>
+                <li>
+                    <button type="button" class="btn btn-danger">Log Out</button>
+                </li>
+            </div>
         </ul>
 
         <div class="icon">
@@ -47,6 +52,9 @@
                 <li>
                     <router-link class="link" to="#">shop</router-link>
                 </li>
+                <li>
+                    <router-link class="link" to="#">Contact</router-link>
+                </li>
                 <li v-if="this.$store.state.auth.user.role === 'admin'">
                     <router-link class="link" to="/dashboard">Dahboard</router-link>
                 </li>
@@ -58,9 +66,11 @@
                         <router-link class="link" to="/register">Register</router-link>
                     </li>
                 </div>
-                <li>
-                    <router-link class="link" to="#">Contact</router-link>
-                </li>
+                <div v-else>
+                    <li>
+                        <button type="button" class="btn btn-danger">Log Out</button>
+                    </li>
+                </div>
             </ul>
         </transition>
     </nav>
