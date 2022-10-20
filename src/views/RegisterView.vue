@@ -4,9 +4,6 @@
 <div class="auth-content">
     <form>
         <h2 class="form-title">Register</h2>
-        <div class="alert alert-success" v-if="message">
-            {{ message }}
-        </div>
         <div>
             <label>Name</label>
             <input type="text" v-model="userData.name" class="text-input">
@@ -34,6 +31,7 @@
 <script>
 import Navbar from '@/components/Navbar'
 import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -46,7 +44,6 @@ export default {
                 email: '',
                 password: ''
             },
-            message: '',
             errors: ''
         }
     },
@@ -55,7 +52,23 @@ export default {
             try {
                 const response = await axiosInstance.post("/register", this.userData)
                 if (response.data.status === 200) {
-                    this.message = response.data.message
+
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+
                     this.userData.name = ''
                     this.userData.email = ''
                     this.userData.password = ''
