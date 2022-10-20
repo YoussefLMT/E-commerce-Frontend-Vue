@@ -16,12 +16,17 @@
             <li>
                 <router-link class="link" to="#">shop</router-link>
             </li>
-            <li>
-                <router-link class="link" to="/login">Login</router-link>
+            <li v-if="this.$store.state.auth.user.role === 'admin'">
+                <router-link class="link" to="/dashboard">Dahboard</router-link>
             </li>
-            <li>
-                <router-link class="link" to="/register">Register</router-link>
-            </li>
+            <div v-if="!this.$store.state.auth.user.token" class="d-flex">
+                <li>
+                    <router-link class="link" to="/login">Login</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/register">Register</router-link>
+                </li>
+            </div>
             <li>
                 <router-link class="link" to="#">Contact</router-link>
             </li>
@@ -42,12 +47,17 @@
                 <li>
                     <router-link class="link" to="#">shop</router-link>
                 </li>
-                <li>
-                    <router-link class="link" to="/login">Login</router-link>
+                <li v-if="this.$store.state.auth.user.role === 'admin'">
+                    <router-link class="link" to="/dashboard">Dahboard</router-link>
                 </li>
-                <li>
-                    <router-link class="link" to="/register">Register</router-link>
-                </li>
+                <div v-if="!this.$store.state.auth.user.token" class="d-flex">
+                    <li>
+                        <router-link class="link" to="/login">Login</router-link>
+                    </li>
+                    <li>
+                        <router-link class="link" to="/register">Register</router-link>
+                    </li>
+                </div>
                 <li>
                     <router-link class="link" to="#">Contact</router-link>
                 </li>
