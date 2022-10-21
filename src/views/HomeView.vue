@@ -288,7 +288,7 @@ export default {
     }
 
     .home-products {
-        padding: 100px 20px;
+        padding: 0px 20px 100px 20px;
     }
 
     .btn {
