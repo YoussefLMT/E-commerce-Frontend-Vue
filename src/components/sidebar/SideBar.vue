@@ -12,3 +12,28 @@
     </span>
 </div>
 </template>
+
+<script>
+import SidebarLink from './SidebarLink'
+import {
+    collapsed,
+    toggleSidebar,
+    sidebarWidth
+} from './sidebarState'
+
+export default {
+    props: {},
+    components: {
+        SidebarLink
+    },
+    data() {
+        return {
+            collapsed,
+            sidebarWidth
+        }
+    },
+    methods: {
+        toggleSidebar,
+    },
+}
+</script>
