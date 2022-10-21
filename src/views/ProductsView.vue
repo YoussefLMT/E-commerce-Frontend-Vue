@@ -27,15 +27,18 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>guyg</td>
-                        <td>33345</td>
-                        <td>ggyuguyguyg</td>
-                        <td>ggyuguyguyg</td>
-                        <td>gfuegfy</td>
-                        <td><img src="http://127.0.0.1:8000/"></td>
+                <div v-if="loading">
+                    <h3>Loading...</h3>
+                </div>
+                <tbody v-else>
+                    <tr v-for="product in products" :key="product.id">
+                        <th scope="row">{{ product.id }}</th>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.description }}</td>
+                        <td><img :src="'http://127.0.0.1:8000/' + product.image"></td>
                     </tr>
                 </tbody>
             </table>

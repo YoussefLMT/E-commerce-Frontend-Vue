@@ -16,7 +16,7 @@ const ProductsModule = {
         }
     },
     mutations: {
-        getPrducts(state, products) {
+        getProducts(state, products) {
             state.products = products
         },
 
