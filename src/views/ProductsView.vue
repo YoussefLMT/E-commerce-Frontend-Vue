@@ -53,20 +53,20 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="fname" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="fname">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" v-model="product.name">
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="price">
+                            <input type="text" class="form-control" id="price" v-model="product.price">
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="text" class="form-control" id="quantity">
+                            <input type="text" class="form-control" id="quantity" v-model="product.quantity">
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Category</label>
-                            <select class="form-select">
+                            <select class="form-select" v-model="product.category">
                                 <option value="tshirt">T-shirt</option>
                                 <option value="jacket">Jacket</option>
                                 <option value="pants">Pants</option>
@@ -74,17 +74,17 @@
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" rows="3"></textarea>
+                            <textarea class="form-control" id="description" rows="3" v-model="product.description"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
-                            <input class="form-control" type="file" id="image">
+                            <input class="form-control" @change="onFileSelected" type="file" id="image">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" @click="addNewProduct" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -117,6 +117,50 @@ export default {
             errors: '',
         }
     },
+    methods: {
+        onFileSelected(e) {
+            this.product.image = e.target.files[0]
+        },
+
+        async addNewProduct() {
+            const data = new FormData()
+            data.append('name', this.product.name)
+            data.append('price', this.product.price)
+            data.append('quantity', this.product.quantity)
+            data.append('category', this.product.category)
+            data.append('description', this.product.description)
+            data.append('image', this.product.image)
+            try {
+                const response = await axiosInstance.post("/add-product", data)
+                if (response.data.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                } else {
+                    this.errors = response.data.validation_err
+                }
+                this.product.name = ''
+                this.product.price = ''
+                this.product.quantity = ''
+                this.product.category = ''
+                this.product.description = ''
+            } catch (error) {
+                console.log(error)
+            }
+        },
+    }
 }
 </script>
 
