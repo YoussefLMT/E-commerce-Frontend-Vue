@@ -31,15 +31,15 @@
                 <div class="d-flex flex-column text-center mt-5">
                     <h5>Social Media</h5>
                     <div class="social-media">
-                        <div class="d-flex mt-2 text-center">
+                        <div class="d-flex mt-2">
                             <span><i class="fa-brands fa-facebook fs-4"></i></span>
                             <a class="ms-2 link" href="#">Facebook</a>
                         </div>
-                        <div class="d-flex mt-2 text-center">
+                        <div class="d-flex mt-2">
                             <span><i class="fa-brands fa-twitter fs-4"></i></span>
                             <a class="ms-2 link" href="#">Twitter</a>
                         </div>
-                        <div class="d-flex mt-2 text-center">
+                        <div class="d-flex mt-2">
                             <span><i class="fa-brands fa-instagram fs-4"></i></span>
                             <a class="ms-2 link" href="#">Instagram</a>
                         </div>
