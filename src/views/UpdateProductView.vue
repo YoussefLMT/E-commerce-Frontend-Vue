@@ -65,6 +65,19 @@ export default {
             errors: '',
         }
     },
+    mounted() {
+        this.getProduct()
+    },
+    methods: {
+        async getProduct() {
+            try {
+                const response = await axiosInstance.get(`/get-product/${this.$route.params.id}`)
+                this.product = response.data.product
+            } catch (error) {
+                console.log(error)
+            }
+        },
+    },
 }
 </script>
 
