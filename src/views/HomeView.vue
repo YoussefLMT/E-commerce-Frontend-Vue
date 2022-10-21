@@ -57,20 +57,21 @@
     <div v-else class="content">
         <Product v-for="product in latestProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
-    <div class="title">
-        <router-link to="/menu" class="btn">See All</router-link>
-    </div>
 </section>
 
 <section class="menu">
     <div class="title">
-        <h2 class="title-txt">Our <span>Menu</span></h2>
+        <h2 class="title-txt">Our <span>Products</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <div  class="content">
+    <div v-if="loading" class="text-center mt-5 mb-5">
+        <Circle />
+    </div>
+    <div v-else class="content">
+        <Product v-for="product in homeProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
     <div class="title">
-        <router-link to="/menu" class="btn">See All</router-link>
+        <router-link to="/menu" class="see-all-btn">See All</router-link>
     </div>
 </section>
 </template>
@@ -114,6 +115,9 @@ export default {
         latestProducts() {
             return store.getters['specificProducts/latestProducts']
         },
+        homeProducts() {
+            return store.getters['specificProducts/homeProducts']
+        },
         loading() {
             return store.getters['specificProducts/loading']
         }
@@ -154,7 +158,7 @@ export default {
 
 .home-content .btn {
     margin-top: 10px;
-    font-weight: 500;
+    font-weight: 600;
     background: #EAB800;
     border: none;
 }
@@ -226,9 +230,10 @@ export default {
     margin-top: 40px;
 }
 
-.btn {
+.see-all-btn {
     font-size: 15px;
     font-weight: 600;
+    border-radius: 7px;
     color: #fff;
     background: #EAB800;
     display: inline-block;
@@ -239,7 +244,7 @@ export default {
     letter-spacing: 2px;
 }
 
-.btn:hover {
+.see-all-btn:hover {
     background: #C19800;
     border: none;
 }
