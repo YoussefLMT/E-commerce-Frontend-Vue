@@ -3,13 +3,13 @@ import axiosInstance from '../axios'
 const SpecificProductsModule = {
     namespaced: true,
     state: {
-        latest_product: [],
+        latest_products: [],
         home_products: [],
         loading: false
     },
     getters: {
         latestProducts(state) {
-            return state.latest_product
+            return state.latest_products
         },
 
         homeProducts(state) {
@@ -21,12 +21,12 @@ const SpecificProductsModule = {
         }
     },
     mutations: {
-        getHomeProduct(state, home_products) {
+        getHomeProducts(state, home_products) {
             state.home_products = home_products
         },
 
-        getLatestProduct(state, latest_product) {
-            state.latest_product = latest_product
+        getLatestProducts(state, latest_products) {
+            state.latest_products = latest_products
         },
 
         setLoading(state, loading) {
@@ -40,7 +40,7 @@ const SpecificProductsModule = {
             axiosInstance.get('/specific-products')
                 .then(response => {
                     commit('getHomeProducts', response.data.home_products)
-                    commit('getLatestProducts', response.data.latest_product)
+                    commit('getLatestProducts', response.data.latest_products)
                     commit('setLoading', false)
                 })
                 .catch(error => console.log(error))

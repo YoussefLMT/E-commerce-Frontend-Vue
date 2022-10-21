@@ -69,12 +69,15 @@ import Category from '@/components/Category.vue'
 import tshirt from '@/assets/t-shirt.png'
 import jacket from '@/assets/jacket.png'
 import pants from '@/assets/pants.png'
+import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         Navbar,
         Feature,
-        Category
+        Category,
+        Circle
     },
     data() {
         return {
@@ -84,6 +87,17 @@ export default {
             tshirt,
             jacket,
             pants
+        }
+    },
+    mounted() {
+        store.dispatch('specificProducts/getSpecificProducts')
+    },
+    computed: {
+        latestProducts() {
+            return store.getters['specificProducts/latestProducts']
+        },
+        loading() {
+            return store.getters['specificProducts/loading']
         }
     },
 }
