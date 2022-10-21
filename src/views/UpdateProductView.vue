@@ -6,7 +6,7 @@
 
     <div class="card pr" style="width: 800px;">
         <div class="card-header">
-            Meals Managment
+            Products Managment
         </div>
         <div class="card-body">
             <form>
@@ -54,6 +54,15 @@ export default {
     data() {
         return {
             sidebarWidth,
+            product: {
+                name: '',
+                price: '',
+                quantity: '',
+                category: '',
+                description: '',
+                image: ''
+            },
+            errors: '',
         }
     },
 }
