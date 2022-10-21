@@ -15,14 +15,64 @@ import { useRoute } from 'vue-router'
 import { collapsed } from './sidebarState'
 
 export default {
-  props: {
-    to: { type: String, required: true },
-    icon: { type: String, required: true }
-  },
-  setup(props) {
-    const route = useRoute()
-    const isActive = computed(() => route.path === props.to)
-    return { isActive, collapsed }
-  }
+    props: {
+        to: {
+            type: String,
+            required: true
+        },
+        icon: {
+            type: String,
+            required: true
+        }
+    },
+    setup(props) {
+        const route = useRoute()
+        const isActive = computed(() => route.path === props.to)
+        return {
+            isActive,
+            collapsed
+        }
+    }
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+    user-select: none;
+    margin: 0.5em 0;
+    padding: 1.4em;
+    border-radius: 0.25em;
+    height: 1.8em;
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: var(--sidebar-item-hover);
+}
+
+.link.active {
+    background-color: var(--sidebar-item-active);
+}
+
+.link .icon {
+    font-size: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+</style>
