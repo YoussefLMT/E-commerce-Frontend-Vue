@@ -3,7 +3,7 @@
 
     <div class="links">
         <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
-
+        <SidebarLink to="/products" icon="fa-solid fa-cart-shopping">Products</SidebarLink>
     </div>
 
     <button @click="logOut" class="logout-btn">Log Out</button>
