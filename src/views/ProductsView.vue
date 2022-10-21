@@ -55,14 +55,17 @@
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" v-model="product.name">
+                            <span class="text-danger" v-if="errors.name">{{ errors.name[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
                             <input type="text" class="form-control" id="price" v-model="product.price">
+                            <span class="text-danger" v-if="errors.price">{{ errors.price[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
                             <input type="text" class="form-control" id="quantity" v-model="product.quantity">
+                            <span class="text-danger" v-if="errors.quantity">{{ errors.quantity[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Category</label>
@@ -71,14 +74,17 @@
                                 <option value="jacket">Jacket</option>
                                 <option value="pants">Pants</option>
                             </select>
+                            <span class="text-danger" v-if="errors.category">{{ errors.category[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" id="description" rows="3" v-model="product.description"></textarea>
+                            <span class="text-danger" v-if="errors.description">{{ errors.description[0] }}</span>
                         </div>
                         <div class="mb-3">
                             <label for="image" class="form-label">Image</label>
                             <input class="form-control" @change="onFileSelected" type="file" id="image">
+                            <span class="text-danger" v-if="errors.image">{{ errors.image[0] }}</span>
                         </div>
                     </form>
                 </div>
@@ -97,6 +103,8 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -113,7 +121,6 @@ export default {
                 description: '',
                 image: ''
             },
-            message: '',
             errors: '',
         }
     },
