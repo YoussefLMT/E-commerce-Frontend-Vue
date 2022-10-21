@@ -33,11 +33,13 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
 
 export default {
     components: {
         Navbar,
-        Footer
+        Footer,
+        Circle
     },
     data() {
         return {
