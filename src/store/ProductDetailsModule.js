@@ -25,7 +25,7 @@ const ProductDetailsModule = {
         },
     },
     actions: {
-        getMeal({ commit }, id) {
+        getProduct({ commit }, id) {
             commit('setLoading', true)
 
             axiosInstance.get(`/get-product/${id}`)

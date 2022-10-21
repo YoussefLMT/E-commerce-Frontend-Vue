@@ -40,6 +40,17 @@ export default {
             quantity: 1
         }
     },
+    mounted() {
+        store.dispatch('productDetails/getProduct', this.$route.params.id)
+    },
+    computed: {
+        product() {
+            return store.getters['productDetails/product']
+        },
+        loading() {
+            return store.getters['productDetails/loading']
+        }
+    },
     methods: {
         increment() {
             this.quantity++
