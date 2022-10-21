@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="d-flex flex-column">
-                    <h5 class="navbar-brand fw-bold fs-2"><span class="text-fo">Fo</span>od</h5>
+                    <h5 class="navbar-brand fw-bold fs-2"><span class="text-fo">H</span>S</h5>
                     <p class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
                         veniam excepturi. Laboriosam doloremque cupiditate animi eius est possimus
                         saepe quo, deleniti aperiam ad ex enim assumenda rem temporibus error modi?
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="d-flex flex-column text-center">
+                <div class="d-flex flex-column text-center mt-5">
                     <h5>Services</h5>
                     <a class="link mt-2" href="#">Activities</a>
                     <a class="link mt-3" href="#">Terms and Conditions</a>
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="d-flex flex-column text-center">
+                <div class="d-flex flex-column text-center mt-5">
                     <h5>Support</h5>
                     <a class="link mt-2" href="#">Contact Us</a>
                     <a class="link mt-3" href="#">Guide</a>
@@ -28,19 +28,21 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="d-flex flex-column text-center">
+                <div class="d-flex flex-column text-center mt-5">
                     <h5>Social Media</h5>
-                    <div class="d-flex mt-2 text-center">
-                        <span><i class="fa-brands fa-facebook fs-4"></i></span>
-                        <a class="ms-2 link" href="#">Facebook</a>
-                    </div>
-                    <div class="d-flex mt-2 text-center">
-                        <span><i class="fa-brands fa-twitter fs-4"></i></span>
-                        <a class="ms-2 link" href="#">Twitter</a>
-                    </div>
-                    <div class="d-flex mt-2 text-center">
-                        <span><i class="fa-brands fa-instagram fs-4"></i></span>
-                        <a class="ms-2 link" href="#">Instagram</a>
+                    <div class="social-media">
+                        <div class="d-flex mt-2 text-center">
+                            <span><i class="fa-brands fa-facebook fs-4"></i></span>
+                            <a class="ms-2 link" href="#">Facebook</a>
+                        </div>
+                        <div class="d-flex mt-2 text-center">
+                            <span><i class="fa-brands fa-twitter fs-4"></i></span>
+                            <a class="ms-2 link" href="#">Twitter</a>
+                        </div>
+                        <div class="d-flex mt-2 text-center">
+                            <span><i class="fa-brands fa-instagram fs-4"></i></span>
+                            <a class="ms-2 link" href="#">Instagram</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,6 +81,12 @@ h5 {
 }
 
 .text-fo {
-    color: #e74c3c;
+    color: #EAB800;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

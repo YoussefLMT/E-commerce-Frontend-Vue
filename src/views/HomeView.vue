@@ -223,7 +223,7 @@ export default {
 }
 
 .home-products {
-    padding: 0px 100px 100px 100px;
+    padding: 0px 100px 0px 100px;
 }
 
 .home-products .content {
@@ -292,7 +292,7 @@ export default {
     }
 
     .home-products {
-        padding: 0px 20px 100px 20px;
+        padding: 0px 20px 0px 20px;
     }
 
     .btn {
