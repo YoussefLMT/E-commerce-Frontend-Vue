@@ -95,4 +95,14 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+
+  if (to.meta.requiresAuth && !store.state.auth.user.token) {
+    next({ name: 'notFound' });
+  } else {
+    next()
+  }
+});
+
+
 export default router
