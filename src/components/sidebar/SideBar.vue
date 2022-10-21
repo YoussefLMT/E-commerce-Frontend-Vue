@@ -2,6 +2,7 @@
 <div class="sidebar" :style="{ width: sidebarWidth }">
 
     <div class="links">
+        <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
 
     </div>
 
