@@ -190,7 +190,23 @@ export default {
 
         async deleteProduct(id) {
             try {
-                await axiosInstance.delete(`/delete-meal/${id}`)
+                const response = await axiosInstance.delete(`/delete-product/${id}`)
+                const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+
                 store.dispatch('products/getProducts')
             } catch (error) {
                 console.log(error)
