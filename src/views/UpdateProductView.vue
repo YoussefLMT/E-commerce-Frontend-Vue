@@ -34,7 +34,7 @@
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" id="description" rows="3" v-model="product.description"></textarea>
                 </div>
-                <button type="button" class="btn btn-primary">Update Meal</button>
+                <button type="button" @click="updateProduct" class="btn btn-primary">Update Product</button>
             </form>
         </div>
     </div>
@@ -46,6 +46,8 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -77,6 +79,33 @@ export default {
                 console.log(error)
             }
         },
+
+        async updateProduct() {
+            try {
+                const response = await axiosInstance.put(`/update-product/${this.$route.params.id}`, this.meal)
+                if (response.data.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                } else if (response.data.status === 422) {
+                    this.errors = response.data.validation_err
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
     },
 }
 </script>
