@@ -61,6 +61,18 @@
         <router-link to="/menu" class="btn">See All</router-link>
     </div>
 </section>
+
+<section class="menu">
+    <div class="title">
+        <h2 class="title-txt">Our <span>Menu</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+    <div  class="content">
+    </div>
+    <div class="title">
+        <router-link to="/menu" class="btn">See All</router-link>
+    </div>
+</section>
 </template>
 
 <script>
@@ -195,6 +207,18 @@ export default {
 }
 
 .latest-product .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.menu {
+    padding: 0px 100px;
+}
+
+.menu .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
