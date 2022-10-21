@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Sidebar from '@/components/SideBar.vue'
+import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
-} from '@/components/sidebarState'
+} from '@/components/sidebar/sidebarState'
 
 export default {
     components: {
