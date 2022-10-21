@@ -59,7 +59,7 @@
     </div>
 </section>
 
-<section class="menu">
+<section class="home-products">
     <div class="title">
         <h2 class="title-txt">Our <span>Products</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
@@ -218,11 +218,11 @@ export default {
     margin-top: 40px;
 }
 
-.menu {
-    padding: 0px 100px;
+.home-products {
+    padding: 0px 100px 100px 100px;
 }
 
-.menu .content {
+.home-products .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -287,7 +287,7 @@ export default {
         padding: 100px 20px;
     }
 
-    .menu {
+    .home-products {
         padding: 100px 20px;
     }
 
