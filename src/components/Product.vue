@@ -6,7 +6,7 @@
     <div class="text">
         <h3>{{ name }}</h3>
         <p>{{ price }} DH</p>
-        <!-- <router-link :to="{ name: 'mealDetails', params: {id: id }}" class="btn-show">Show</router-link> -->
+        <router-link :to="{ name: 'productDetails', params: {id: id }}" class="btn-show">Show</router-link>
     </div>
 </div>
 </template>
@@ -55,9 +55,11 @@ export default {
 }
 
 .btn-show {
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 7px;
     color: #fff;
-    background: #e74c3c;
+    background: #EAB800;
     display: inline-block;
     padding: 10px 30px;
     text-transform: uppercase;
@@ -66,7 +68,7 @@ export default {
 }
 
 .btn-show:hover {
-    background: hsl(6, 84%, 34%);
+    background: #C19800;
     border: none;
 }
 </style>
