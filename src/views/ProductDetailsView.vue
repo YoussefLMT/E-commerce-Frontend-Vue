@@ -34,6 +34,23 @@ export default {
     components: {
         Navbar,
         Footer
+    },
+    data() {
+        return {
+            quantity: 1
+        }
+    },
+    methods: {
+        increment() {
+            this.quantity++
+        },
+        decrement() {
+            if (this.quantity === 1) {
+                this.quantity = 1
+            } else {
+                this.quantity--
+            }
+        },
     }
 }
 </script>
