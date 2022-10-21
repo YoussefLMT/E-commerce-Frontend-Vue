@@ -82,7 +82,7 @@ export default {
 
         async updateProduct() {
             try {
-                const response = await axiosInstance.put(`/update-product/${this.$route.params.id}`, this.meal)
+                const response = await axiosInstance.put(`/update-product/${this.$route.params.id}`, this.product)
                 if (response.data.status === 200) {
                     const Toast = Swal.mixin({
                         toast: true,
