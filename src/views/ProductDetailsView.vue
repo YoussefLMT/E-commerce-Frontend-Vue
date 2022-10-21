@@ -5,7 +5,9 @@
 
 </div>
 
-<Footer />
+<div class="footer">
+    <Footer />
+</div>
 </template>
 
 <script>
@@ -21,5 +23,10 @@ export default {
 </script>
 
 <style scoped>
-
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 </style>
