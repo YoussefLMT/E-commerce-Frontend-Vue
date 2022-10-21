@@ -43,7 +43,7 @@
     </div>
 
     <!--Add Product Modal -->
-    <div class="modal fade" id="addMealModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -54,15 +54,15 @@
                     <form>
                         <div class="mb-3">
                             <label for="fname" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="fname" >
+                            <input type="text" class="form-control" id="fname">
                         </div>
                         <div class="mb-3">
                             <label for="price" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="price" >
+                            <input type="text" class="form-control" id="price">
                         </div>
-                         <div class="mb-3">
+                        <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
-                            <input type="text" class="form-control" id="quantity" >
+                            <input type="text" class="form-control" id="quantity">
                         </div>
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Category</label>
@@ -105,6 +105,16 @@ export default {
     data() {
         return {
             sidebarWidth,
+            product: {
+                name: '',
+                price: '',
+                quantity: '',
+                category: '',
+                description: '',
+                image: ''
+            },
+            message: '',
+            errors: '',
         }
     },
 }
