@@ -45,4 +45,54 @@ export default {
     left: 0;
     right: 0;
 } */
+
+.details-img {
+    height: 300px;
+}
+
+btn:hover {
+    background: hsl(6, 84%, 34%);
+    border: none;
+}
+
+.navbar {
+    background-color: blue;
+    padding: 45px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 0px;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.quantity-toggle {
+    display: flex;
+}
+
+.quantity-toggle input {
+    border: 0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    width: 2.5rem;
+    text-align: center;
+    padding: 0 .5rem;
+}
+
+.quantity-toggle button {
+    border: 0;
+    padding: .2rem;
+    background: #e74c3c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
 </style>
