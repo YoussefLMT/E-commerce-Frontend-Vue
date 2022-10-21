@@ -282,6 +282,10 @@ export default {
         padding: 100px 20px;
     }
 
+    .menu {
+        padding: 100px 20px;
+    }
+
     .btn {
         font-size: 15px;
         padding: 8px 20px;
