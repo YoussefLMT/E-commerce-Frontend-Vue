@@ -170,6 +170,28 @@ export default {
     margin-top: 40px;
 }
 
+.latest-product {
+    padding: 200px 100px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #EAB800;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: #C19800;
+    border: none;
+}
+
 @media only screen and (max-width: 800px) {
 
     .home-content {
