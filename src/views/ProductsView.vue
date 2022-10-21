@@ -39,6 +39,9 @@
                         <td>{{ product.category }}</td>
                         <td>{{ product.description }}</td>
                         <td><img :src="'http://127.0.0.1:8000/' + product.image"></td>
+                         <td>
+                            <button type="button" @click="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -170,6 +173,8 @@ export default {
                         icon: 'success',
                         title: response.data.message
                     })
+
+                    store.dispatch('products/getProducts')
                 } else {
                     this.errors = response.data.validation_err
                 }
@@ -182,6 +187,15 @@ export default {
                 console.log(error)
             }
         },
+
+        async deleteProduct(id) {
+            try {
+                await axiosInstance.delete(`/delete-meal/${id}`)
+                store.dispatch('products/getProducts')
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 }
 </script>
