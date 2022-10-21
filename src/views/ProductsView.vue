@@ -105,6 +105,7 @@ import {
 } from '@/components/sidebar/sidebarState'
 import axiosInstance from '../axios'
 import Swal from 'sweetalert2'
+import store from '@/store'
 
 export default {
     components: {
@@ -122,6 +123,17 @@ export default {
                 image: ''
             },
             errors: '',
+        }
+    },
+    mounted() {
+        store.dispatch('products/getProducts')
+    },
+    computed: {
+        products() {
+            return store.getters['products/products']
+        },
+        loading() {
+            return store.getters['products/loading']
         }
     },
     methods: {
