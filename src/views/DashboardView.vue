@@ -25,5 +25,8 @@ export default {
 </script>
 
 <style scoped>
-
+.dashboard {
+    padding: 20px;
+    transition: 0.3s ease;
+}
 </style>
