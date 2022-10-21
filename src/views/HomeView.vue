@@ -51,7 +51,11 @@
         <h2 class="title-txt">Latest <span>Products</span></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
     </div>
-    <div class="content">
+    <div v-if="loading" class="text-center mt-5 mb-5">
+        <Circle />
+    </div>
+    <div v-else class="content">
+        <Product v-for="product in latestProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
     <div class="title">
         <router-link to="/menu" class="btn">See All</router-link>
@@ -71,13 +75,15 @@ import jacket from '@/assets/jacket.png'
 import pants from '@/assets/pants.png'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
+import Product from '@/components/Product.vue'
 
 export default {
     components: {
         Navbar,
         Feature,
         Category,
-        Circle
+        Circle,
+        Product
     },
     data() {
         return {
