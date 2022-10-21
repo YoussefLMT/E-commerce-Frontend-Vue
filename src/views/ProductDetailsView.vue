@@ -56,20 +56,32 @@ export default {
 </script>
 
 <style scoped>
-/* .footer {
+.footer {
     position: absolute;
-    bottom: 0;
+    bottom: -180px;
     left: 0;
     right: 0;
-} */
+}
 
 .details-img {
     height: 300px;
 }
 
-btn:hover {
-    background: hsl(6, 84%, 34%);
-    border: none;
+.btn {
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 7px;
+    color: #fff;
+    background: #EAB800;
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: #C19800;
 }
 
 .navbar {
@@ -79,7 +91,7 @@ btn:hover {
 }
 
 .container {
-    margin-top: 80px;
+    margin-top: 180px;
 }
 
 p {
@@ -106,7 +118,7 @@ p {
 .quantity-toggle button {
     border: 0;
     padding: .2rem;
-    background: #e74c3c;
+    background: #EAB800;
     color: white;
     font-size: 1rem;
     font-weight: bold;
