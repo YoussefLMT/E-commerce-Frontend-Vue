@@ -194,6 +194,14 @@ export default {
     padding: 200px 100px;
 }
 
+.latest-product .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
 .btn {
     font-size: 15px;
     font-weight: 600;

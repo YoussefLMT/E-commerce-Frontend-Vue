@@ -50,7 +50,8 @@ export default {
 }
 
 .box .text p {
-    color: #e74c3c;
+    color: #EAB800;
+    font-weight: 500;
 }
 
 .btn-show {
