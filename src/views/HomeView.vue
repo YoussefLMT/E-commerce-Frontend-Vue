@@ -45,6 +45,18 @@
         <Category :image="image1" name="Sandwich" />
     </div>
 </section>
+
+<section class="latest-product">
+    <div class="title">
+        <h2 class="title-txt">Latest <span>Products</span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+    </div>
+    <div class="content">
+    </div>
+    <div class="title">
+        <router-link to="/menu" class="btn">See All</router-link>
+    </div>
+</section>
 </template>
 
 <script>
