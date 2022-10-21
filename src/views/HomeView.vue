@@ -74,6 +74,8 @@
         <router-link to="/menu" class="see-all-btn">See All</router-link>
     </div>
 </section>
+
+<Footer />
 </template>
 
 <script>
@@ -89,6 +91,7 @@ import pants from '@/assets/pants.png'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
 import Product from '@/components/Product.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
     components: {
@@ -96,7 +99,8 @@ export default {
         Feature,
         Category,
         Circle,
-        Product
+        Product,
+        Footer
     },
     data() {
         return {
