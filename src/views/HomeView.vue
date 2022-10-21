@@ -225,5 +225,14 @@ export default {
         text-align: center;
         padding: 0 20px;
     }
+
+    .latest-product {
+        padding: 100px 20px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 8px 20px;
+    }
 }
 </style>
