@@ -39,8 +39,9 @@
                         <td>{{ product.category }}</td>
                         <td>{{ product.description }}</td>
                         <td><img :src="'http://127.0.0.1:8000/' + product.image"></td>
-                         <td>
+                        <td>
                             <button type="button" @click="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                            <router-link :to="{ name: 'updateProduct', params: {id: product.id }}" class="btn btn-warning">Update</router-link>
                         </td>
                     </tr>
                 </tbody>
@@ -192,20 +193,20 @@ export default {
             try {
                 const response = await axiosInstance.delete(`/delete-product/${id}`)
                 const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer)
-                            toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
-                    Toast.fire({
-                        icon: 'success',
-                        title: response.data.message
-                    })
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
 
                 store.dispatch('products/getProducts')
             } catch (error) {
