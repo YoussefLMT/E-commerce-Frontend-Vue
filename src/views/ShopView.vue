@@ -1,8 +1,13 @@
 <template>
 <Navbar />
 
-<div>
-
+<div class="shop">
+    <div v-if="loading" class="text-center mt-5 mb-5">
+        <Circle />
+    </div>
+    <div v-else class="content">
+        <Product v-for="product in products" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
+    </div>
 </div>
 
 <Footer />
@@ -12,11 +17,15 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
+import Circle from 'vue-loading-spinner/src/components/Circle'
+import Product from '@/components/Product.vue'
 
 export default {
     components: {
         Navbar,
         Footer,
+        Circle,
+        Product
     },
     mounted() {
         store.dispatch('products/getProducts')
