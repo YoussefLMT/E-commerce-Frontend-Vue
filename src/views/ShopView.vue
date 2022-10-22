@@ -27,6 +27,12 @@ export default {
         Circle,
         Product
     },
+    data() {
+        return {
+            category: 'all',
+            productsCategory: []
+        }
+    },
     mounted() {
         store.dispatch('products/getProducts')
     },
