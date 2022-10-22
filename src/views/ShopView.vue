@@ -42,5 +42,16 @@ export default {
 </script>
 
 <style scoped>
+.shop {
+    margin-top: 200px;
+    padding: 0px 100px;
+}
 
+.shop .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
 </style>
