@@ -202,4 +202,30 @@ p {
     font-weight: bold;
     cursor: pointer;
 }
+
+/* @media only screen and (max-width: 800px) {
+    .container {
+        margin: 120px auto;
+    }
+
+    .details-img {
+        height: 200px;
+        margin-left: 55px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 8px 20px;
+        margin-left: 55px;
+    }
+
+    .quantity-toggle {
+        justify-content: center;
+        margin-top: 30px;
+    }
+} */
 </style>
