@@ -19,6 +19,7 @@ import Footer from '@/components/Footer.vue'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
 import Product from '@/components/Product.vue'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -42,6 +43,12 @@ export default {
         },
         loading() {
             return store.getters['products/loading']
+        },
+    },
+    methods: {
+        async getProductsByCategory() {
+            const response = await axiosInstance.get(`products-category/${this.category}`)
+            this.productsCategory = response.data.products
         },
     },
 }
