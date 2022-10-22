@@ -107,7 +107,7 @@ export default {
     font-weight: 500;
 }
 
-.btn-show {
+.btn {
     font-size: 13px;
     font-weight: 600;
     border-radius: 7px;
@@ -118,11 +118,11 @@ export default {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
+    border: 0;
 }
 
-.btn-show:hover {
+.btn:hover {
     background: #C19800;
-    border: none;
 }
 
 .empty-cart {
