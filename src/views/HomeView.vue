@@ -71,7 +71,7 @@
         <Product v-for="product in homeProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
     <div class="title">
-        <router-link to="/menu" class="see-all-btn">See All</router-link>
+        <router-link to="/shop" class="see-all-btn">See All</router-link>
     </div>
 </section>
 
