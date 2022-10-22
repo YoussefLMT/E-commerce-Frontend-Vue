@@ -90,22 +90,31 @@
 </template>
 
 <script>
+import axiosInstance from '@/axios'
+
 export default {
     data() {
         return {
             mobile: null,
             mobileNav: null,
             windowWidth: null,
+            cart_count: ''
         }
     },
     created() {
         window.addEventListener('resize', this.checkScreenWidth)
         this.checkScreenWidth()
     },
+    mounted() {
+        if (localStorage.getItem('token')) {
+            this.getCartCount()
+        }
+    },
     methods: {
         toggleNavBar() {
             this.mobileNav = !this.mobileNav
         },
+
         checkScreenWidth() {
             this.windowWidth = window.innerWidth
             if (this.windowWidth <= 750) {
@@ -115,6 +124,11 @@ export default {
             this.mobile = false
             this.mobileNavfalse = false
             return
+        },
+
+        async getCartCount() {
+            const response = await axiosInstance.get('/cart-count')
+            this.cart_count = response.data.cart_count
         },
     }
 }
