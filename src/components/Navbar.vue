@@ -91,6 +91,7 @@
 
 <script>
 import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     data() {
@@ -192,7 +193,7 @@ header nav ul,
 
 header nav ul li {
     padding: 16px;
-    margin-left: 16px;
+    margin-left: 5px;
 }
 
 header nav ul .link {
