@@ -28,7 +28,7 @@
                         <h3>{{ cartProduct.name }}</h3>
                         <p>{{ cartProduct.price}} DH</p>
                         <p>Quantity: {{ cartProduct.quantity}}</p>
-                        <button type="button" class="btn">Remove</button>
+                        <button type="button" @click="removeProduct(cartProduct.cart_id)" class="btn">Remove</button>
                     </div>
                 </div>
             </div>
@@ -46,6 +46,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer.vue'
 import store from '@/store'
 import Circle from 'vue-loading-spinner/src/components/Circle'
+import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -67,6 +69,35 @@ export default {
             return store.getters['cart/loading']
         }
     },
+    methods: {
+        async removeProduct(id) {
+            const response = await axiosInstance.delete(`/remove-product/${id}`)
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            if (response.data.status === 200) {
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+                store.dispatch('cart/getCartProducts')
+            } else if (response.data.status === 404) {
+                Toast.fire({
+                    icon: 'error',
+                    title: response.data.message
+                })
+                store.dispatch('cart/getCartProducts')
+            }
+        }
+    }
 }
 </script>
 
