@@ -16,12 +16,15 @@ export default {
         Navbar,
         Footer,
     },
-     mounted() {
+    mounted() {
         store.dispatch('cart/getCartProducts')
     },
     computed: {
         cartProducts() {
             return store.getters['cart/cartProducts']
+        },
+        cartProductsLength() {
+            return this.cartProducts.length
         },
         loading() {
             return store.getters['cart/loading']
