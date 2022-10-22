@@ -30,7 +30,13 @@
                     <router-link class="link" to="/register">Register</router-link>
                 </li>
             </div>
-            <div v-else>
+            <div v-else class="d-flex mt-2">
+                <li>
+                    <router-link class="link" to="/cart">Cart (0)</router-link>
+                </li>
+                <li>
+                    <router-link class="link" to="/my-orders">My Orders</router-link>
+                </li>
                 <li>
                     <button type="button" class="btn btn-danger">Log Out</button>
                 </li>
@@ -67,6 +73,12 @@
                     </li>
                 </div>
                 <div v-else>
+                    <li>
+                        <router-link class="link" to="/cart">Cart (0)</router-link>
+                    </li>
+                    <li>
+                        <router-link class="link" to="/my-orders">My Orders</router-link>
+                    </li>
                     <li>
                         <button type="button" class="btn btn-danger">Log Out</button>
                     </li>
