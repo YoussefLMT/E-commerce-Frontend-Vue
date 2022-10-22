@@ -18,7 +18,10 @@
     <div v-if="loading" class="text-center mt-5 mb-5">
         <Circle />
     </div>
-    <div v-else class="content">
+    <div v-else-if="category === 'all'" class="content">
+        <Product v-for="product in products" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
+    </div>
+    <div v-else-if="productsCategory" class="content">
         <Product v-for="product in products" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
 </div>
@@ -57,6 +60,9 @@ export default {
         loading() {
             return store.getters['products/loading']
         },
+        productsCategoryLength(){
+            return this.productsCategory.length
+        }
     },
     methods: {
         async getProductsByCategory() {
