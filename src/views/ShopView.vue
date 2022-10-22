@@ -15,6 +15,11 @@
             </div>
         </div>
     </div>
+
+    <div v-if="productsCategoryLength === 0 && category != 'all'">
+        <h5 class="text-center mt-3">There is no product in this category</h5>
+    </div>
+
     <div v-if="loading" class="text-center mt-5 mb-5">
         <Circle />
     </div>
@@ -22,7 +27,7 @@
         <Product v-for="product in products" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
     <div v-else-if="productsCategory" class="content">
-        <Product v-for="product in products" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
+        <Product v-for="product in productsCategory" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
     </div>
 </div>
 
@@ -60,7 +65,7 @@ export default {
         loading() {
             return store.getters['products/loading']
         },
-        productsCategoryLength(){
+        productsCategoryLength() {
             return this.productsCategory.length
         }
     },
