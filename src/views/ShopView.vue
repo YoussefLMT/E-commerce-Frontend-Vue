@@ -54,4 +54,12 @@ export default {
     flex-wrap: wrap;
     margin-top: 40px;
 }
+
+@media only screen and (max-width: 800px) {
+
+    .shop {
+        margin-top: 100px;
+        padding: 0px 20px;
+    }
+}
 </style>
