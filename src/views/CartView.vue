@@ -12,7 +12,7 @@
                 <div class="col-md-">
                     <img src="@/assets/cart.png">
                     <h3 class="text-center">Your cart is currently empty</h3>
-                    <router-link to="/menu" class="btn btn-warning mt-3">Return To Menu</router-link>
+                    <router-link to="/shop" class="btn btn-warning mt-3">Return To Shop</router-link>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                         <h3>{{ cartProduct.name }}</h3>
                         <p>{{ cartProduct.price}} DH</p>
                         <p>Quantity: {{ cartProduct.quantity}}</p>
-                        <button type="button" @click="removeProduct(cartProduct.cart_id)" class="btn">Remove</button>
+                        <button type="button" @click="removeProduct(cartProduct.id)" class="btn">Remove</button>
                     </div>
                 </div>
             </div>
@@ -36,9 +36,7 @@
     </div>
 </div>
 
-<div class="footer">
-    <Footer />
-</div>
+<Footer />
 </template>
 
 <script>
