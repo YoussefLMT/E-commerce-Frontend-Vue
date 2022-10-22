@@ -32,7 +32,7 @@
             </div>
             <div v-else class="d-flex mt-2">
                 <li>
-                    <router-link class="link" to="/cart">Cart (0)</router-link>
+                    <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/my-orders">My Orders</router-link>
@@ -74,7 +74,7 @@
                 </div>
                 <div v-else>
                     <li>
-                        <router-link class="link" to="/cart">Cart (0)</router-link>
+                        <router-link class="link" to="/cart">Cart ({{cart_count}})</router-link>
                     </li>
                     <li>
                         <router-link class="link" to="/my-orders">My Orders</router-link>
