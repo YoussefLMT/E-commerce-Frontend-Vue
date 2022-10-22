@@ -38,7 +38,7 @@
                     <router-link class="link" to="/my-orders">My Orders</router-link>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-danger">Log Out</button>
+                    <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
                 </li>
             </div>
         </ul>
@@ -80,7 +80,7 @@
                         <router-link class="link" to="/my-orders">My Orders</router-link>
                     </li>
                     <li>
-                        <button type="button" class="btn btn-danger">Log Out</button>
+                        <button type="button" @click="logOut" class="btn btn-danger">Log Out</button>
                     </li>
                 </div>
             </ul>
@@ -130,6 +130,32 @@ export default {
             const response = await axiosInstance.get('/cart-count')
             this.cart_count = response.data.cart_count
         },
+
+        async logOut() {
+            try {
+                const response = await axiosInstance.post("/logout")
+                if (response.data.status === 200) {
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('role')
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                    this.$router.push('/login')
+                }
+            } catch (error) {}
+        }
     }
 }
 </script>
