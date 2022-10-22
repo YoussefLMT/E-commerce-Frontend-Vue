@@ -28,7 +28,7 @@ const CartModule = {
         getCartProducts({ commit }) {
             commit('setLoading', true)
 
-            axiosInstance.get('/get-cart-meals')
+            axiosInstance.get('/get-cart-products')
                 .then(response => {
                     commit('getCartProducts', response.data.cart_products)
                     commit('setLoading', false)

@@ -9,11 +9,23 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer.vue'
+import store from '@/store'
 
 export default {
     components: {
         Navbar,
         Footer,
+    },
+     mounted() {
+        store.dispatch('cart/getCartProducts')
+    },
+    computed: {
+        cartProducts() {
+            return store.getters['cart/cartProducts']
+        },
+        loading() {
+            return store.getters['cart/loading']
+        }
     },
 }
 </script>
