@@ -1,6 +1,20 @@
 <template>
 <Navbar />
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto mt-3">
+            <label for="category" class="form-label">Select a category</label>
+            <select class="form-select" v-model="category" @change="onChange" id="category">
+                <option value="all">All</option>
+                <option value="tshirt">T-shirt</option>
+                <option value="jacket">Jacket</option>
+                <option value="pants">Pants</option>
+            </select>
+        </div>
+    </div>
+</div>
+
 <div class="shop">
     <div v-if="loading" class="text-center mt-5 mb-5">
         <Circle />
