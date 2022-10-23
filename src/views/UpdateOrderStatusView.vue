@@ -34,6 +34,8 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import axiosInstance from '@/axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -42,6 +44,31 @@ export default {
     data() {
         return {
             sidebarWidth,
+            status: ''
+        }
+    },
+    methods: {
+        async updateOrderStatus() {
+            const response = await axiosInstance.put(`/update-order-status/${this.$route.params.id}`, {
+                status: this.status
+            })
+            if (response.data.status === 200) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: response.data.message
+                })
+            }
         }
     },
 }
