@@ -49,6 +49,14 @@ export default {
         Navbar,
         Footer,
     },
+    data() {
+        return {
+            total_amount: '',
+            address: '',
+            city: '',
+            phone: ''
+        }
+    },
 }
 </script>
 
