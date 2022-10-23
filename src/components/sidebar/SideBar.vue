@@ -5,6 +5,7 @@
         <SidebarLink to="/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
         <SidebarLink to="/products" icon="fa-solid fa-cart-shopping">Products</SidebarLink>
         <SidebarLink to="/users" icon="fa-solid fa-users">Users</SidebarLink>
+        <SidebarLink to="/orders" icon="fa-sharp fa-solid fa-bag-shopping">Orders</SidebarLink>
     </div>
 
     <button @click="logOut" class="logout-btn">Log Out</button>
