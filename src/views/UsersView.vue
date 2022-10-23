@@ -90,6 +90,13 @@ export default {
     data() {
         return {
             sidebarWidth,
+            user: {
+                name: '',
+                email: '',
+                password: '',
+                role: '',
+            },
+            errors: '',
         }
     },
 }
