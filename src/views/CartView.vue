@@ -19,7 +19,6 @@
         <router-link v-if="cartProductsLength > 0" to="/order" class="btn mt-5">Order Now</router-link><br><br>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4" v-for="cartProduct in cartProducts" :key="cartProduct.id">
-
                 <div class="box">
                     <div class="imgbox">
                         <img :src="'http://127.0.0.1:8000/' + cartProduct.image">

@@ -8,11 +8,14 @@
     </div>
     <div class="row" v-else v-for="order in userOrders" :key="order.id">
         <div class="col-sm-3">
-            <div class="card mb-3" style="width: 18rem;">
-                <img class="card-img-top" :src="'http://127.0.0.1:8000/' + order.image">
-                <div class="card-body">
-                    <h5 class="card-title">{{ order.name }}</h5>
-                    <p class="card-text">{{ order.price }} DH</p>
+            <div class="box">
+                <div class="imgbox">
+                    <img :src="'http://127.0.0.1:8000/' + order.image">
+                </div>
+                <div class="text">
+                    <h3>{{ order.name }}</h3>
+                    <p>{{ order.price}} DH</p>
+                    <p>Quantity: {{ order.product_quantity}}</p>
                 </div>
             </div>
         </div>
