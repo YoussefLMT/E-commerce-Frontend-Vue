@@ -12,10 +12,12 @@
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" v-model="user.name">
+                    <span class="text-danger" v-if="errors.name">{{ errors.name[0] }}</span>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" v-model="user.email">
+                    <span class="text-danger" v-if="errors.email">{{ errors.email[0] }}</span>
                 </div>
                 <div class="mb-3">
                     <label for="passowrd" class="form-label">New Password</label>
@@ -27,6 +29,7 @@
                         <option value="user">user</option>
                         <option value="admin">admin</option>
                     </select>
+                    <span class="text-danger" v-if="errors.role">{{ errors.role[0] }}</span>
                 </div>
                 <button type="button" @click="updateUser" class="btn btn-primary">Update User</button>
             </form>
@@ -40,6 +43,7 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import axiosInstance from '../axios'
 
 export default {
     components: {
