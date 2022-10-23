@@ -4,7 +4,7 @@
 <section class="home">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="home-content">
                     <h2><span class="text">Happy</span> Shop</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas eum quidem natus, veritatis asperiores facere, voluptate consectetur adipisci ea voluptatem tempore deserunt provident fugit eveniet eos enim? Dolorem, atque.</p>
@@ -133,7 +133,7 @@ export default {
 .image {
     width: 500px;
     margin-top: 170px;
-    margin-left: 280px;
+    margin-left: 120px;
 }
 
 .image img {
