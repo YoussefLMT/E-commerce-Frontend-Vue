@@ -114,7 +114,7 @@ export default {
     padding: 10px;
     border-radius: 10px;
     background-color: #2980b9;
-    font-weight: bold;
+    font-weight: 500;
     color: white;
 }
 
