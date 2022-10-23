@@ -12,6 +12,7 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import store from '@/store'
 
 export default {
     components: {
@@ -20,6 +21,17 @@ export default {
     data() {
         return {
             sidebarWidth,
+        }
+    },
+    mounted() {
+        store.dispatch('orders/getOrders')
+    },
+    computed: {
+        orders() {
+            return store.getters['orders/orders']
+        },
+        loading() {
+            return store.getters['orders/loading']
         }
     },
 }
