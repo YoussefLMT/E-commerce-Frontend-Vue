@@ -35,11 +35,35 @@
                         <td>{{ order.total_amount }}</td>
                         <td class="badge text-bg-warning mt-2">{{ order.status }}</td>
                         <td>
-                            <button type="button" @click="getOrderProducts(order.id)" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#getOrderMeals">Meals</button>
+                            <button type="button" @click="getOrderProducts(order.id)" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#getOrderProducts">Meals</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <!--Order Products Modal -->
+    <div class="modal fade" id="getOrderProducts" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Order Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3" style="width: 18rem;" v-for="orderProduct in order_products" :key="orderProduct.id">
+                        <img :src="'http://127.0.0.1:8000/' + orderProduct.image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ orderProduct.name}}</h5>
+                            <p class="card-text text-center">{{ orderProduct.price }} DH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
