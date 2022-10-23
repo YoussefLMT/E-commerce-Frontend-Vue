@@ -41,6 +41,14 @@ export default {
         });
         myChart
     },
-    
+    methods: {
+        async getOrdersStatistics() {
+            const response = await axiosInstance.get('/orders-statistics')
+            this.pendingOrdersCount = response.data.pendingOrdersCount
+            this.inProgressOrdersCount = response.data.inProgressOrdersCount
+            this.shippingOrdersCount = response.data.shippingOrdersCount
+            this.shippedOrdersCount = response.data.shippedOrdersCount
+        }
+    }
 }
 </script>
