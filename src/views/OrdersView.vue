@@ -4,7 +4,7 @@
 <div :style="{ 'margin-left': sidebarWidth }" class="orders">
     <h1>Orders</h1>
 
-    <div class="card me" style="width: 1100px;">
+    <div class="card mt-5 or" style="width: 1100px;">
         <div class="card-header">
             Orders Managment
         </div>
@@ -34,10 +34,6 @@
                         <td>{{ order.phone }}</td>
                         <td>{{ order.total_amount }}</td>
                         <td class="badge text-bg-warning mt-2">{{ order.status }}</td>
-                        <td>
-                            <button type="button" @click="getOrderMeals(order.id)" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#getOrderMeals">Meals</button>
-                            <router-link :to="{ name: 'updateOrderStatus', params: {id: order.id }}" class="btn btn-primary">Update Status</router-link>
-                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -82,7 +78,7 @@ export default {
     transition: 0.3s ease;
 }
 
-.me {
+.or {
     margin: 50px auto;
 }
 
