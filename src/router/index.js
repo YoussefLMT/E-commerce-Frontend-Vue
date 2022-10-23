@@ -125,6 +125,25 @@ const routes = [
       }
     }
   },
+  {
+    path: '/update-user/:id',
+    name: 'updateUser',
+    component: () => import('../views/UpdateUserView.vue'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: (to, from, next) => {
+      if (store.state.auth.user.token) {
+        if (store.state.auth.user.role !== "admin") {
+          next({ name: 'notFound' });
+        } else {
+          next()
+        }
+      } else {
+        next({ name: 'login' })
+      }
+    }
+  },
 ]
 
 const router = createRouter({
