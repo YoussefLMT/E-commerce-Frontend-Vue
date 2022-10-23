@@ -58,6 +58,14 @@ const routes = [
     },
   },
   {
+    path: '/my-orders',
+    name: 'myOrders',
+    component: () => import('../views/MyOrdersView.vue'),
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
     path: '/dashboard',
     name: 'dashboard',
     component: () => import('../views/DashboardView.vue'),
