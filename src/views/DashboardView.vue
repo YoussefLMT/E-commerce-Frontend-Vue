@@ -17,6 +17,14 @@
             <Card icon="fa-solid fa-dollar-sign" title="Income" :count="income + 'DH'" />
         </div>
     </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <BarChart />
+            </div>
+        </div>
+    </div>
 </div>
 </template>
 
@@ -27,11 +35,13 @@ import {
 } from '@/components/sidebar/sidebarState'
 import axiosInstance from '@/axios'
 import Card from '../components/Card'
+import BarChart from '../components/BarChart'
 
 export default {
     components: {
         Sidebar,
-        Card
+        Card,
+        BarChart
     },
     data() {
         return {
