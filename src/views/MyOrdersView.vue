@@ -60,5 +60,39 @@ export default {
 </script>
 
 <style scoped>
+.box {
+    width: 250px;
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
 
+.box:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box .imgbox {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.imgbox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.box .text {
+    padding: 10px 0 0px;
+    text-align: center;
+}
+
+.box .text p {
+    color: #EAB800;
+    font-weight: 500;
+}
 </style>
