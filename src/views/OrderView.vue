@@ -43,6 +43,7 @@
 <script>
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer.vue'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -56,6 +57,15 @@ export default {
             city: '',
             phone: ''
         }
+    },
+    mounted() {
+        this.getOrderTotalPrice()
+    },
+    methods: {
+        async getOrderTotalPrice() {
+            const response = await axiosInstance.get('/total-price')
+            this.total_amount = response.data.total_price
+        },
     },
 }
 </script>
