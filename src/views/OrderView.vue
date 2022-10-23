@@ -1,7 +1,7 @@
 <template>
 <Navbar />
 
-<div class="container mt-5">
+<div class="container">
     <div class="row">
         <div class="col-6 mx-auto">
             <table class="table">
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 mt-5 mx-auto">
+        <div class="col-6 mt-5 mx-auto order-form">
             <form>
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
@@ -71,5 +71,31 @@ export default {
 </script>
 
 <style scoped>
+.container {
+    margin-top: 150px;
+}
 
+.order-form {
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn {
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 7px;
+    color: #fff;
+    background: #EAB800;
+    display: inline-block;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border: 0;
+}
+
+.btn:hover {
+    background: #C19800;
+}
 </style>
