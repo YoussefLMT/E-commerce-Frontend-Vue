@@ -19,11 +19,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 ml-5">
+        <div class="col-sm-4 mt-5 ml-5 order-description">
             <p>Address: {{ order.address }}</p>
             <p>City: {{ order.city }}</p>
             <p>Phone: {{ order.phone }}</p>
-            <p class="badge tt text-bg-warning">Status: {{ order.status }}</p>
+            <p>Status: <span class="badge text-bg-warning">{{ order.status }}</span></p>
         </div>
     </div>
 </div>
@@ -94,5 +94,13 @@ export default {
 .box .text p {
     color: #EAB800;
     font-weight: 500;
+}
+
+.order-description p {
+    font-weight: 500;
+}
+
+.order-description .badge {
+    font-size: 15px;
 }
 </style>
