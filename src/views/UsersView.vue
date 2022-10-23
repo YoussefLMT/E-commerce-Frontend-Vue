@@ -35,6 +35,7 @@
                         <td>{{ user.role }}</td>
                         <td>
                             <button type="button" @click="deleteUser(user.id)" class="btn btn-danger">Delete</button>
+                            <router-link :to="{ name: 'updateUser', params: {id: user.id }}" class="btn btn-warning">Update</router-link>
                         </td>
                     </tr>
                 </tbody>
@@ -163,7 +164,7 @@ export default {
                     toast: true,
                     position: 'top-end',
                     showConfirmButton: false,
-                    timer: 2000,
+                    timer: 1000,
                     timerProgressBar: true,
                     didOpen: (toast) => {
                         toast.addEventListener('mouseenter', Swal.stopTimer)
