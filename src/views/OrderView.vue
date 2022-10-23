@@ -8,7 +8,7 @@
                 <tbody>
                     <tr>
                         <th scope="col">Total Amount</th>
-                        <td>34534534 DH</td>
+                        <td>{{ total_amount }} DH</td>
                     </tr>
                 </tbody>
             </table>
