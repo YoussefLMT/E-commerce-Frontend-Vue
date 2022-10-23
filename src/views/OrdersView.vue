@@ -34,6 +34,9 @@
                         <td>{{ order.phone }}</td>
                         <td>{{ order.total_amount }}</td>
                         <td class="badge text-bg-warning mt-2">{{ order.status }}</td>
+                        <td>
+                            <button type="button" @click="getOrderProducts(order.id)" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#getOrderMeals">Meals</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -48,6 +51,7 @@ import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
 import store from '@/store'
+import axiosInstance from '@/axios'
 
 export default {
     components: {
@@ -56,6 +60,7 @@ export default {
     data() {
         return {
             sidebarWidth,
+            order_products: []
         }
     },
     mounted() {
@@ -68,6 +73,12 @@ export default {
         loading() {
             return store.getters['orders/loading']
         }
+    },
+    methods: {
+        async getOrderProducts(id) {
+            const response = await axiosInstance.get(`get-order-products/${id}`)
+            this.order_products = response.data.order_products
+        },
     },
 }
 </script>
