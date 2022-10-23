@@ -82,6 +82,7 @@ import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
+import store from '@/store'
 
 export default {
     components: {
@@ -97,6 +98,17 @@ export default {
                 role: '',
             },
             errors: '',
+        }
+    },
+    mounted() {
+        store.dispatch('users/getUsers')
+    },
+    computed: {
+        users() {
+            return store.getters['users/users']
+        },
+        loading() {
+            return store.getters['users/loading']
         }
     },
 }
