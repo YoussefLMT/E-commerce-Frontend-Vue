@@ -57,6 +57,19 @@ export default {
             errors: ''
         }
     },
+    mounted() {
+        this.getUser()
+    },
+    methods: {
+        async getUser() {
+            try {
+                const response = await axiosInstance.get(`/get-user/${this.$route.params.id}`)
+                this.user = response.data.user
+            } catch (error) {
+                console.log(error)
+            }
+        },
+    },
 }
 </script>
 
