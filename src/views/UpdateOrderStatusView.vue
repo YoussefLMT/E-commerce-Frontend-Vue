@@ -3,7 +3,29 @@
 
 <div :style="{ 'margin-left': sidebarWidth }" class="orders">
     <h1>Update Order Status</h1>
-
+    <div class="card up-order" style="width: 600px;">
+        <div class="card-header">
+            Orders Management
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <form>
+                            <label class="mb-3">Select Status</label>
+                            <select class="form-select" v-model="status">
+                                <option value="pending">pending</option>
+                                <option value="in progress">in progress</option>
+                                <option value="shipping">shipping</option>
+                                <option value="shipped">shipped</option>
+                            </select>
+                            <button type="button" @click="updateOrderStatus" class="btn btn-primary mt-3">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </template>
 
