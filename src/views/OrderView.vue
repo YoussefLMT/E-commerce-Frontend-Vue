@@ -98,4 +98,10 @@ export default {
 .btn:hover {
     background: #C19800;
 }
+
+@media only screen and (max-width: 800px) {
+    .order-form {
+        padding: 15px;
+    }
+}
 </style>
