@@ -3,7 +3,7 @@
     <div class="container mt-4">
         <div class="c-dashboardInfo">
             <div class="wrap">
-                <h4 class="heading heading5 hind-font medium-font-weight c-dashboardInfo__title"><i :class="icon"></i>{{ title }}</h4><span class="hind-font caption-12 c-dashboardInfo__count">{{ count }}</span>
+                <h4 class="c-dashboardInfo__title"><i :class="icon"></i>{{ title }}</h4><span class="hind-font caption-12 c-dashboardInfo__count">{{ count }}</span>
             </div>
         </div>
     </div>
@@ -66,17 +66,6 @@ export default {
 .c-dashboardInfo__title svg {
     color: #d7d7d7;
     margin-left: 5px;
-}
-
-.MuiSvgIcon-root-19 {
-    fill: currentColor;
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    font-size: 24px;
-    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    user-select: none;
-    flex-shrink: 0;
 }
 
 i {

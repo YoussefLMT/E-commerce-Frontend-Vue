@@ -5,7 +5,7 @@
     <h1>dashboard</h1>
     <div class="row">
         <div class="col-md-3">
-            <Card icon="fa-solid fa-cart-shoppin" title="Products" :count="productsCount" />
+            <Card icon="fa-solid fa-cart-shopping" title="Products" :count="productsCount" />
         </div>
         <div class="col-md-3">
             <Card icon="fa-brands fa-shopify" title="Orders" :count="ordersCount" />
