@@ -23,6 +23,9 @@
             <div class="col-md-6">
                 <BarChart />
             </div>
+             <div class="col-md-6">
+                <DoughnutChart />
+            </div>
         </div>
     </div>
 </div>
@@ -36,12 +39,14 @@ import {
 import axiosInstance from '@/axios'
 import Card from '../components/Card'
 import BarChart from '../components/BarChart'
+import DoughnutChart from '../components/DoughnutChart'
 
 export default {
     components: {
         Sidebar,
         Card,
-        BarChart
+        BarChart,
+        DoughnutChart
     },
     data() {
         return {
