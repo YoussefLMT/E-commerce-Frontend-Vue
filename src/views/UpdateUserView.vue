@@ -3,15 +3,43 @@
 
 <div :style="{ 'margin-left': sidebarWidth }" class="users">
     <h1>Users</h1>
-   
+    <div class="card us" style="width: 800px;">
+        <div class="card-header">
+            Users Managment
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" v-model="user.name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" v-model="user.email">
+                </div>
+                <div class="mb-3">
+                    <label for="passowrd" class="form-label">New Password</label>
+                    <input type="passowrd" class="form-control" id="passowrd" v-model="user.password">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Role</label>
+                    <select class="form-select" v-model="user.role">
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </div>
+                <button type="button" @click="updateUser" class="btn btn-primary">Update User</button>
+            </form>
+        </div>
+    </div>
 </div>
 </template>
 
 <script>
-import Sidebar from '@/components/SideBar.vue'
+import Sidebar from '@/components/sidebar/SideBar.vue'
 import {
     sidebarWidth
-} from '@/components/sidebarState'
+} from '@/components/sidebar/sidebarState'
 
 export default {
     components: {
@@ -30,6 +58,7 @@ export default {
     padding: 20px;
     transition: 0.3s ease;
 }
+
 .us {
     margin: 50px auto;
 }
