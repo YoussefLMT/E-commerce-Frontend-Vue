@@ -19,6 +19,10 @@ export default {
     data() {
         return {
             sidebarWidth,
+            ordersCount: '',
+            mealsCount: '',
+            usersCount: '',
+            income: ''
         }
     },
 }
