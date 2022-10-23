@@ -3,7 +3,7 @@
     <div class="container mt-4">
         <div class="c-dashboardInfo">
             <div class="wrap">
-                <h4 class="c-dashboardInfo__title"><i :class="icon"></i>{{ title }}</h4><span class="hind-font caption-12 c-dashboardInfo__count">{{ count }}</span>
+                <h4 class="c-dashboardInfo__title"><i :class="icon"></i>{{ title }}</h4><span class="c-dashboardInfo__count">{{ count }}</span>
             </div>
         </div>
     </div>
@@ -32,8 +32,7 @@ export default {
     height: 100%;
 }
 
-.c-dashboardInfo__title,
-.c-dashboardInfo__subInfo {
+.c-dashboardInfo__title {
     color: #6c6c6c;
     font-size: 2em;
 }
@@ -63,14 +62,10 @@ export default {
     background: linear-gradient(81.67deg, #0084f4 0%, #1a4da2 100%);
 }
 
-.c-dashboardInfo__title svg {
-    color: #d7d7d7;
-    margin-left: 5px;
-}
-
 i {
     font-size: 50px;
     color: black;
     margin-right: 20px;
+    margin-top: 10px;
 }
 </style>
