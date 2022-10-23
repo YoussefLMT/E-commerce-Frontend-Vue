@@ -51,14 +51,14 @@
                     <h5 class="modal-title" id="exampleModalLabel">Order Products</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="box">
+                <div class="box" v-for="orderProduct in order_products" :key="orderProduct.id">
                     <div class="imgbox">
                         <img :src="'http://127.0.0.1:8000/' + orderProduct.image">
                     </div>
                     <div class="text">
                         <h3>{{ orderProduct.name }}</h3>
                         <p>{{ orderProduct.price}} DH</p>
-                        <!-- <p>Quantity: {{ orderProduct.product_quantity}}</p> -->
+                        <p>Quantity: {{ orderProduct.product_quantity}}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -129,7 +129,7 @@ img {
 
 .box {
     width: 250px;
-    margin: 20px;
+    margin: 20px auto;
     border: 15px solid #fff;
     box-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
