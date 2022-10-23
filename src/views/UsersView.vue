@@ -24,7 +24,7 @@
                         <th scope="col">actions</th>
                     </tr>
                 </thead>
-                 <div v-if="loading" class="spinner">
+                <div v-if="loading" class="spinner">
                     <h3>Loading...</h3>
                 </div>
                 <tbody v-else>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" @click="addNewUser" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -86,6 +86,8 @@ import {
     sidebarWidth
 } from '@/components/sidebar/sidebarState'
 import store from '@/store'
+import axiosInstance from '../axios'
+import Swal from 'sweetalert2'
 
 export default {
     components: {
@@ -113,6 +115,40 @@ export default {
         loading() {
             return store.getters['users/loading']
         }
+    },
+    methods: {
+        async addNewUser() {
+            try {
+                const response = await axiosInstance.post("/add-user", this.user)
+                if (response.data.status === 200) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                    Toast.fire({
+                        icon: 'success',
+                        title: response.data.message
+                    })
+                    store.dispatch('users/getUsers')
+                } else {
+                    this.errors = response.data.validation_err
+                }
+                this.user.name = ''
+                this.user.email = ''
+                this.user.password = ''
+                this.user.role = ''
+            } catch (error) {
+                console.log(error)
+            }
+        },
+
     },
 }
 </script>
