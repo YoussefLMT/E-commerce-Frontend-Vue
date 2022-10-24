@@ -14,7 +14,7 @@
             <h5>{{ product.name }}</h5>
             <p><span class="title">Price:</span> {{ product.price }}DH</p>
             <p><span class="title">Description:</span> {{ product.description }}</p>
-            <p><span class="title">Quantity:</span> {{ product.quantity }}</p>
+            <p><span class="title">Quantity:</span> {{ product.quantity}}</p>
             <div class="quantity-toggle">
                 <button @click="decrement()">&mdash;</button>
                 <input type="text" :value="quantity" readonly>
@@ -63,6 +63,11 @@ export default {
     methods: {
         increment() {
             this.quantity++
+            this.product.quantity--
+
+            if (this.product.quantity <= 1) {
+                alert('out of stock!')
+            }
         },
 
         decrement() {
@@ -70,6 +75,7 @@ export default {
                 this.quantity = 1
             } else {
                 this.quantity--
+                this.product.quantity++
             }
         },
 
