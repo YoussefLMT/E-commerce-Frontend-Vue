@@ -62,11 +62,11 @@ export default {
     },
     methods: {
         increment() {
-            this.quantity++
-            this.product.quantity--
-
-            if (this.product.quantity <= 1) {
-                alert('out of stock!')
+            if (this.product.quantity === 1) {
+                this.quantity = 1
+            } else {
+                this.quantity++
+                this.product.quantity--
             }
         },
 
