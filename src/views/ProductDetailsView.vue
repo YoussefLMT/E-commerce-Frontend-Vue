@@ -18,7 +18,7 @@
             <div class="quantity-toggle">
                 <button @click="decrement()">&mdash;</button>
                 <input type="text" :value="quantity" readonly>
-                <button @click="increment()">&#xff0b;</button>
+                <button @click="increment()" :disabled="product.quantity === '0'">&#xff0b;</button>
             </div><br>
             <button @click="addTocart" class="btn">Add Product To Cart</button>
         </div>
