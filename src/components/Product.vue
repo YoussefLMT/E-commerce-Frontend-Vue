@@ -6,6 +6,7 @@
     <div class="text">
         <h3>{{ name }}</h3>
         <p>{{ price }} DH</p>
+        <p>{{ quantity }}</p>
         <router-link :to="{ name: 'productDetails', params: {id: id }}" class="btn-show">Show</router-link>
     </div>
 </div>
