@@ -13,7 +13,7 @@
 
 <script>
 export default {
-    props: ['image', 'name', 'price', 'id'],
+    props: ['image', 'name', 'price', 'quantity', 'id'],
 }
 </script>
 
