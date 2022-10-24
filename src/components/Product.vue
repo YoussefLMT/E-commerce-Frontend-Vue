@@ -6,7 +6,12 @@
     <div class="text">
         <h3>{{ name }}</h3>
         <p>{{ price }} DH</p>
-        <p>{{ quantity }}</p>
+        <div v-if="Number(quantity) === 0">
+            <p>Out Of Stock!</p>
+        </div>
+        <div v-else>
+            <p>Quantity: {{ quantity }}</p>
+        </div>
         <router-link :to="{ name: 'productDetails', params: {id: id }}" class="btn-show">Show</router-link>
     </div>
 </div>
