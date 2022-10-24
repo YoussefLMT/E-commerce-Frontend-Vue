@@ -14,6 +14,7 @@
             <h5>{{ product.name }}</h5>
             <p><span class="title">Price:</span> {{ product.price }}DH</p>
             <p><span class="title">Description:</span> {{ product.description }}</p>
+            <p><span class="title">Quantity:</span> {{ product.quantity }}</p>
             <div class="quantity-toggle">
                 <button @click="decrement()">&mdash;</button>
                 <input type="text" :value="quantity" readonly>
