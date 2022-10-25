@@ -27,6 +27,9 @@ export default {
     components: {
         Navbar
     },
+    mounted() {
+        AOS.init();
+    },
 }
 </script>
 
@@ -70,5 +73,23 @@ export default {
 
 .home-content .btn:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .home-content {
+        margin-top: 120px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .home-content h2 {
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+    .home-content p {
+        font-size: 17px;
+    }
 }
 </style>
