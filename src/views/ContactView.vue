@@ -58,4 +58,11 @@ export default {
 .btn:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+@media (max-width: 600px) {
+    .contact {
+        margin-top: 100px;
+        width: 90%;
+    }
+}
 </style>
