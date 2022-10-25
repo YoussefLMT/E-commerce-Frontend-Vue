@@ -38,5 +38,24 @@ export default {
 </script>
 
 <style scoped>
+.contact {
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
+.btn {
+    margin-top: 10px;
+    font-weight: 600;
+    background: #EAB800;
+    border: none;
+    color: white;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 </style>
