@@ -17,7 +17,7 @@
                 <router-link class="link" to="/shop">shop</router-link>
             </li>
             <li>
-                <router-link class="link" to="#">Contact</router-link>
+                <router-link class="link" to="/contact">Contact</router-link>
             </li>
             <li v-if="this.$store.state.auth.user.role === 'admin'">
                 <router-link class="link" to="/dashboard">Dahboard</router-link>
@@ -59,7 +59,7 @@
                     <router-link class="link" to="/shop">shop</router-link>
                 </li>
                 <li>
-                    <router-link class="link" to="#">Contact</router-link>
+                    <router-link class="link" to="/contact">Contact</router-link>
                 </li>
                 <li v-if="this.$store.state.auth.user.role === 'admin'">
                     <router-link class="link" to="/dashboard">Dahboard</router-link>
