@@ -11,7 +11,7 @@
                 <router-link class="link" to="/">Home</router-link>
             </li>
             <li>
-                <router-link class="link" to="#">About</router-link>
+                <router-link class="link" to="/about">About</router-link>
             </li>
             <li>
                 <router-link class="link" to="/shop">shop</router-link>
@@ -53,7 +53,7 @@
                     <router-link class="link" to="/">Home</router-link>
                 </li>
                 <li>
-                    <router-link class="link" to="#">About</router-link>
+                    <router-link class="link" to="/about">About</router-link>
                 </li>
                 <li>
                     <router-link class="link" to="/shop">shop</router-link>
