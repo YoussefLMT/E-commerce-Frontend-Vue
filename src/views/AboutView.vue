@@ -25,3 +25,36 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.about {
+    padding: 100px;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .col50 {
+    position: relative;
+    width: 48%;
+}
+
+.row .col50 .imgbox {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.row .col50 .imgbox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
