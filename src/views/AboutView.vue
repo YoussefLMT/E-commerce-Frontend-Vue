@@ -1,19 +1,23 @@
 <template>
 <Navbar />
 
-<div class="about">
-    <div class="row">
-        <div class="col50">
-            <h1 class="title-txt">About <span>Us</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reprehenderit, aut repellat, dolorem illo, voluptatem minima sapiente praesentium earum possimus nemo debitis est sunt? Cumque minus sit quis aliquam veniam!<br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, deserunt maxime consequuntur dolores quae unde vitae, incidunt quisquam quibusdam voluptates sed iure ad, fugit provident optio nisi praesentium et doloremque? </p>
-        </div>
-        <div class="col50">
-            <div class="imgbox">
-                <img src="@/assets/undraw_shopping_app_flsj.svg">
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="home-content">
+                    <h2><span class="text">Happy</span> Shop</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas eum quidem natus, veritatis asperiores facere, voluptate consectetur adipisci ea voluptatem tempore deserunt provident fugit eveniet eos enim? Dolorem, atque.</p>
+                    <button type="button" class="btn btn-primary">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="image d-none d-sm-block">
+                    <img src="@/assets/undraw_shopping_app_flsj.svg">
+                </div>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -27,34 +31,5 @@ export default {
 </script>
 
 <style scoped>
-.about {
-    padding: 100px;
-}
 
-.row {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.row .col50 {
-    position: relative;
-    width: 48%;
-}
-
-.row .col50 .imgbox {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.row .col50 .imgbox img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 </style>
