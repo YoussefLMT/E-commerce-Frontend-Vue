@@ -68,7 +68,7 @@
         <Circle />
     </div>
     <div v-else class="content">
-        <Product v-for="product in homeProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :id="product.id" />
+        <Product v-for="product in homeProducts" :key="product.id" :image="'http://127.0.0.1:8000/' + product.image" :name="product.name" :price="product.price" :quantity="product.quantity" :id="product.id" />
     </div>
     <div class="title">
         <router-link to="/shop" class="see-all-btn">See All</router-link>
