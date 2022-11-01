@@ -68,12 +68,7 @@ export default {
   },
   methods: {
     increment() {
-      // if (this.product.quantity === 1) {
-      //     this.quantity = 1
-      // } else {
       this.quantity++;
-      // this.product.quantity--
-      // }
     },
 
     decrement() {
@@ -81,7 +76,6 @@ export default {
         this.quantity = 1;
       } else {
         this.quantity--;
-        // this.product.quantity++;
       }
     },
 
