@@ -136,6 +136,7 @@ export default {
             try {
                 const response = await axiosInstance.post("/logout")
                 if (response.data.status === 200) {
+                    this.$store.state.auth.user.token = null
                     localStorage.removeItem('token')
                     localStorage.removeItem('role')
                     const Toast = Swal.mixin({
